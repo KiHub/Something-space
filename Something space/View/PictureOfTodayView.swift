@@ -38,8 +38,9 @@ struct PictureOfTodayView: View {
                     .cornerRadius(20)
             } else {
                 ZStack {
-                    RoundedRectangle(cornerRadius: 20).fill(.gray).opacity(20)
-                    Text("🛸🛸🛸").font(.title)
+                  //  RoundedRectangle(cornerRadius: 20).fill(.gray).opacity(20)
+                    Spinner()
+                   // Text("🛸🛸🛸").font(.title)
                 }
                 }
             ScrollView() {

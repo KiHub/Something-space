@@ -7,12 +7,14 @@
 
 import Foundation
 
-struct Photo: Codable {
+struct Photo: Codable, Identifiable {
     var title: String
     var description: String
     var url: URL?
     var copyright: String?
     var date: String
+    
+    let id = UUID()
     
     enum CodingKeys: String, CodingKey {
         case title = "title"
