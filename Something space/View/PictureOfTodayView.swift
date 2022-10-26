@@ -10,12 +10,32 @@ import SwiftUI
 struct PictureOfTodayView: View {
     @ObservedObject var manager = NetworkManager()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 20) {
+            
+            if manager.image != nil {
+                Image(uiImage: self.manager.image!)
+                    .resizable()
+                    .scaledToFit()
+                    .cornerRadius(20)
+            }
+            ScrollView() {
+                Text(manager.photo.date).font(.headline)
+                Spacer()
+                Text(manager.photo.title).font(.headline)
+                Spacer()
+            Text(manager.photo.description)
+            }
+        }
+        .padding()
+        
+    }
+}
+struct PictureOfTodayView_Previews: PreviewProvider {
+    static var previews: some View {
+        let view = PictureOfTodayView()
+        view.manager.photo = Photo.createDefault()
+        view.manager.image = UIImage(named: "preview")
+        return view
     }
 }
 
-struct PictureOfTodayView_Previews: PreviewProvider {
-    static var previews: some View {
-        PictureOfTodayView()
-    }
-}

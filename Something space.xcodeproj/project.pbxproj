@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B552C7C2908426500F4764C /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B552C7B2908426500F4764C /* Photo.swift */; };
 		0BCE389E2902DECF00302C7D /* Something_spaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCE389D2902DECF00302C7D /* Something_spaceApp.swift */; };
 		0BCE38A02902DECF00302C7D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCE389F2902DECF00302C7D /* ContentView.swift */; };
 		0BCE38A22902DED300302C7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BCE38A12902DED300302C7D /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B552C7B2908426500F4764C /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		0BCE389A2902DECF00302C7D /* Something space.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Something space.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BCE389D2902DECF00302C7D /* Something_spaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Something_spaceApp.swift; sourceTree = "<group>"; };
 		0BCE389F2902DECF00302C7D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 		0BCE38AB2902E30800302C7D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0B552C7B2908426500F4764C /* Photo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B552C7C2908426500F4764C /* Photo.swift in Sources */,
 				0BCE38AF2906960100302C7D /* NetworkManager.swift in Sources */,
 				0BCE38B3290698CB00302C7D /* UrlHelper.swift in Sources */,
 				0BCE38A02902DECF00302C7D /* ContentView.swift in Sources */,
