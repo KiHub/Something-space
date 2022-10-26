@@ -8,16 +8,40 @@
 import SwiftUI
 
 struct PictureOfTodayView: View {
+    
     @ObservedObject var manager = NetworkManager()
+    @State private var showDate: Bool = false
+    
     var body: some View {
-        VStack(spacing: 20) {
+        VStack(alignment: .center, spacing: 20) {
+            
+            HStack() {
+                Spacer()
+                Button {
+                    self.showDate.toggle()
+                } label: {
+                    Text("Change date")
+                    Image(systemName: "list.number")
+                   
+                }.foregroundColor(.black)
+                    .popover(isPresented: $showDate) {
+                        SelectDateView(manager: self.manager)
+                    }
+
+
+            }
             
             if manager.image != nil {
                 Image(uiImage: self.manager.image!)
                     .resizable()
                     .scaledToFit()
                     .cornerRadius(20)
-            }
+            } else {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 20).fill(.gray).opacity(20)
+                    Text("🛸🛸🛸").font(.title)
+                }
+                }
             ScrollView() {
                 Text(manager.photo.date).font(.headline)
                 Spacer()
