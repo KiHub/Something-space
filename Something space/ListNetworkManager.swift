@@ -54,4 +54,22 @@ class ListNetworkManager: ObservableObject {
         
     }
     
+//    func fetchImage(photo: Photo) {
+//        guard photo.image == nil, let url = photo.url else { return }
+//    
+//    let task = URLSession.shared.dataTask(with: url) { data, responce, error in
+//        if let error = error {
+//            print("fetch image error, \(error)")
+//        } else if let data = data, let image = UIImage(data: data),
+//                  let index = self.info.firstIndex(where: {
+//            $0.id == photo.id
+//        }) {
+//            DispatchQueue.main.async {
+//                self.info[index].image = image
+//            }
+//        }
+//    }
+//        task.resume()
+//    }
+       
 }

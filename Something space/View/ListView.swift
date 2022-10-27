@@ -15,14 +15,14 @@ struct ListView: View {
         NavigationView {
             List {
                 ForEach(manager.info) { info in
-                    NavigationLink(destination: DetailView(photo: info)) {
+                    NavigationLink(destination: StickyDetailView(photo: info)) {
                         Row(photo: info)
                     }
-                   
-              
+        
                 }
                 
             }
+            .navigationTitle("Something space")
             .refreshable {
                 manager.getMore(times: 5)
         }

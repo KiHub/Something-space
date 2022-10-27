@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct Photo: Codable, Identifiable {
     var title: String
@@ -15,6 +16,8 @@ struct Photo: Codable, Identifiable {
     var date: String
     
     let id = UUID()
+    
+    var image: UIImage? = nil
     
     var formatterDate: Date {
         let dateFormatter = API.createFormatter()
