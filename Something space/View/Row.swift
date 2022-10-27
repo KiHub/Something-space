@@ -8,13 +8,48 @@
 import SwiftUI
 
 struct Row: View {
+    
+    let photo: Photo
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack() {
+            if let url = photo.url {
+                AsyncImage(url: url) { phase in
+                    if let image = phase.image {
+                        image
+                            .resizable()
+                            .scaledToFill()
+                          //  .aspectRatio(contentMode: .fit)
+                            .clipShape(Circle())
+                    } else if phase.error != nil {
+                        ZStack {
+                           
+                            Circle()
+                                .foregroundColor(.gray)
+                            Text("❌")
+                        }
+                        
+                    } else {
+                        ProgressView()
+                    }
+                }
+                .frame(width: 80, height: 80)
+            }
+            VStack(alignment: .leading) {
+                Text(photo.date)
+                Text(photo.title)
+            }
+        
+            Spacer()
+        }
+        
     }
 }
 
 struct Row_Previews: PreviewProvider {
     static var previews: some View {
-        Row()
+        Row(photo: Photo.createDefault())
+      //  Row(photo: Photo.createDefault(), image: UIImage(named: "preview")!)
+            .previewLayout(.fixed(width: 400, height: 100))
     }
 }

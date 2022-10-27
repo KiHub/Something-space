@@ -9,7 +9,9 @@ import Foundation
 
 struct Constants {
     
-    static let key = "DEMO_KEY"
+  //  static let key = "DEMO_KEY"
+    
+    static let key = "SZ7eTPx46Ea6LQeKorUdPSqoMgJy2euWFixUeQSi"
     static let baseURL = "https://api.nasa.gov/planetary/apod"
     
 }

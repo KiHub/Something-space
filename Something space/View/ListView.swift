@@ -14,8 +14,14 @@ struct ListView: View {
     var body: some View {
         List {
             ForEach(manager.info) { info in
-                Text(info.title)
+                
+                Row(photo: info)
+          
             }
+            
+        }
+        .refreshable {
+            manager.getMore(times: 5)
         }
         
     }

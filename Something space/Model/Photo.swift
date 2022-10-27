@@ -16,6 +16,11 @@ struct Photo: Codable, Identifiable {
     
     let id = UUID()
     
+    var formatterDate: Date {
+        let dateFormatter = API.createFormatter()
+        return dateFormatter.date(from: self.date) ?? Date()
+    }
+    
     enum CodingKeys: String, CodingKey {
         case title = "title"
         case description = "explanation"

@@ -9,9 +9,15 @@ import Foundation
 import Combine
 
 struct API {
-    static func createURL(for date: Date) -> URL {
+    
+    static func createFormatter() -> DateFormatter {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
+        return formatter
+    }
+    
+    static func createURL(for date: Date) -> URL {
+        let formatter = API.createFormatter()
         let dateString = formatter.string(from: date)
         let url = URL(string: Constants.baseURL)!
         let fullURL = url.withQuery(["api_key": Constants.key, "date": dateString])!
