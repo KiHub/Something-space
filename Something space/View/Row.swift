@@ -37,7 +37,7 @@ struct Row: View {
             }
             VStack(alignment: .leading) {
                 Text(photo.date)
-                Text(photo.title)
+                Text(photo.title).font(.headline)
             }
         
             Spacer()

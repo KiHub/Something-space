@@ -12,16 +12,20 @@ struct ListView: View {
     @ObservedObject var manager = ListNetworkManager()
     
     var body: some View {
-        List {
-            ForEach(manager.info) { info in
+        NavigationView {
+            List {
+                ForEach(manager.info) { info in
+                    NavigationLink(destination: DetailView(photo: info)) {
+                        Row(photo: info)
+                    }
+                   
+              
+                }
                 
-                Row(photo: info)
-          
             }
-            
+            .refreshable {
+                manager.getMore(times: 5)
         }
-        .refreshable {
-            manager.getMore(times: 5)
         }
         
     }
