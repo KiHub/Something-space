@@ -25,7 +25,8 @@ struct FloatingTabBar: View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
             TabView(selection: $selectedTab) {
                 
-                PictureOfTodayView()
+                FloatingPictureOfTodayView()
+              //  PictureOfTodayView()
                     .ignoresSafeArea(.all, edges: .all)
                     .tag("home")
                     

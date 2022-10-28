@@ -13,6 +13,7 @@ struct ContentView: View {
      //   ListView()
         FloatingTabBar()
       //  ListView()
+      //  FloatingPictureOfTodayView()
     }
 }
 

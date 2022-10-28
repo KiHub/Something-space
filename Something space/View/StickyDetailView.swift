@@ -9,26 +9,22 @@ import SwiftUI
 
 struct StickyDetailView: View {
     @Environment(\.presentationMode) var presentation
-   //     ..   @Environment(\.presentationMode) var presentation
     var photo: Photo
     
     var body: some View {
         ZStack(alignment: .top) {
-
             ScrollView {
                 ZStack {
-                    
                     VStack(spacing: 30) {
                         Spacer()
                         Text(photo.date).font(.headline)
-                     //   Spacer()
+                        //   Spacer()
                         Text(photo.title).font(.headline)
-                     //   Spacer()
+                        //   Spacer()
                         Text(photo.description)
                     }
                     .padding(.horizontal, 20)
-                    .padding(.top, 300)
-                    
+                    .padding(.top, 350)
                     GeometryReader { gr in
                         
                         VStack() {
@@ -56,7 +52,7 @@ struct StickyDetailView: View {
                                                     .frame(height:
                                                             self.calculateHeight(minHeight: 120,
                                                                                  maxHeight: 200,
-                                                                             yOffset: gr.frame(in: .global).origin.y))
+                                                                                 yOffset: gr.frame(in: .global).origin.y))
                                                 Text("❌")
                                             }
                                             Spacer()
@@ -70,7 +66,7 @@ struct StickyDetailView: View {
                                                 .frame(height:
                                                         self.calculateHeight(minHeight: 120,
                                                                              maxHeight: 300,
-                                                                         yOffset: gr.frame(in: .global).origin.y))
+                                                                             yOffset: gr.frame(in: .global).origin.y))
                                             Spacer()
                                         }
                                     }
@@ -83,40 +79,24 @@ struct StickyDetailView: View {
             }.navigationBarHidden(true)
             HStack(spacing: 30) {
                 Button {
-
+                    
                     self.presentation.wrappedValue.dismiss()
                 } label: {
                     Text("⬅️").foregroundColor(Color("ColorTabLight"))
                         .padding()
-                                    .background(
-                                        Circle()
-                                            .stroke(lineWidth: 2)
-                                            .shadow(color: Color("ColorLightShadow"), radius: 10, x: 5, y: 5)
-                                    )
+                        .background(
+                            Circle()
+                                .stroke(lineWidth: 2)
+                        )
                 }.controlSize(.small)
-                   
+                
                     .foregroundColor(Color("ColorTabLight"))
-                    
+                
                     .padding()
                 Spacer()
             }
-         //   Spacer()
-            
         }
-//                    Button {
-//
-//                        self.presentation.wrappedValue.dismiss()
-//                    } label: {
-//                        Text("⬅️ Back").foregroundColor(.black)
-//                            .padding()
-//                                        .background(
-//                                            RoundedRectangle(cornerRadius: 10)
-//                                                .stroke(lineWidth: 2)
-//                                        )
-//                    }.controlSize(.small)
-//           .foregroundColor(.black)
     }
-    
     
     func calculateHeight(minHeight: CGFloat, maxHeight: CGFloat, yOffset: CGFloat) -> CGFloat {
         // If scrolling up, yOffset will be a negative number
@@ -124,19 +104,12 @@ struct StickyDetailView: View {
             //  UP
             // Never go smaller than our minimum height
             print("Up")
-            
             return minHeight
         }
         print("down")
-        //        else if maxHeight + yOffset > maxHeight {
-        //                // SCROLLING DOWN PAST MAX HEIGHT
-        //                return maxHeight + (yOffset * 0.5) // Lessen the offset
-        //            }
         //    DOWN
         return maxHeight + yOffset
     }
-    
-    
 }
 
 struct StickyDetailView_Previews: PreviewProvider {
