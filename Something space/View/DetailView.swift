@@ -12,7 +12,7 @@ struct DetailView: View {
     var photo: Photo
     
     var body: some View {
-        VStack(spacing: 20) {
+        VStack(spacing: 40) {
             if let url = photo.url {
                 AsyncImage(url: url) { phase in
                     if let image = phase.image {
@@ -41,8 +41,9 @@ struct DetailView: View {
                 .ignoresSafeArea(.container, edges: .top)
                 
             }
-            
-            ScrollView() {
+            Spacer()
+            VStack(spacing: 30) {
+                Spacer()
                 Text(photo.date).font(.headline)
                 Spacer()
                 Text(photo.title).font(.headline)

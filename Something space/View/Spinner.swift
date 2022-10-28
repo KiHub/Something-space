@@ -30,13 +30,13 @@ struct Spinner: View {
 
             ZStack {
                 // S3
-                SpinnerCircle(start: spinnerStart, end: spinnerEndS2S3, rotation: rotationDegreeS3, color: .black)
+                SpinnerCircle(start: spinnerStart, end: spinnerEndS2S3, rotation: rotationDegreeS3, color: Color("ColorLightShadow"))
 
                 // S2
-                SpinnerCircle(start: spinnerStart, end: spinnerEndS2S3, rotation: rotationDegreeS2, color: .gray)
+                SpinnerCircle(start: spinnerStart, end: spinnerEndS2S3, rotation: rotationDegreeS2, color: Color("ColorTab"))
 
                 // S1
-                SpinnerCircle(start: spinnerStart, end: spinnerEndS1, rotation: rotationDegreeS1, color: .purple)
+                SpinnerCircle(start: spinnerStart, end: spinnerEndS1, rotation: rotationDegreeS1, color: Color("ColorTabLight"))
 
             }.frame(width: 200, height: 200)
         }

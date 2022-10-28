@@ -25,7 +25,7 @@ struct Row: View {
                         ZStack {
                            
                             Circle()
-                                .foregroundColor(.gray)
+                                .foregroundColor(Color("ColorLightShadow"))
                             Text("❌")
                         }
                         

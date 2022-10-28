@@ -16,6 +16,8 @@
 		0B552C882909CD7E00F4764C /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B552C872909CD7E00F4764C /* Row.swift */; };
 		0B552C8A290A9F5800F4764C /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B552C89290A9F5800F4764C /* DetailView.swift */; };
 		0B552C8C290AE32500F4764C /* StickyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B552C8B290AE32500F4764C /* StickyDetailView.swift */; };
+		0B552C8E290BD72E00F4764C /* FloatingTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B552C8D290BD72E00F4764C /* FloatingTabBar.swift */; };
+		0B552C91290BD7AA00F4764C /* CustomShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B552C90290BD7AA00F4764C /* CustomShape.swift */; };
 		0BCE389E2902DECF00302C7D /* Something_spaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCE389D2902DECF00302C7D /* Something_spaceApp.swift */; };
 		0BCE38A02902DECF00302C7D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCE389F2902DECF00302C7D /* ContentView.swift */; };
 		0BCE38A22902DED300302C7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BCE38A12902DED300302C7D /* Assets.xcassets */; };
@@ -36,6 +38,8 @@
 		0B552C872909CD7E00F4764C /* Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
 		0B552C89290A9F5800F4764C /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		0B552C8B290AE32500F4764C /* StickyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyDetailView.swift; sourceTree = "<group>"; };
+		0B552C8D290BD72E00F4764C /* FloatingTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTabBar.swift; sourceTree = "<group>"; };
+		0B552C90290BD7AA00F4764C /* CustomShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomShape.swift; sourceTree = "<group>"; };
 		0BCE389A2902DECF00302C7D /* Something space.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Something space.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BCE389D2902DECF00302C7D /* Something_spaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Something_spaceApp.swift; sourceTree = "<group>"; };
 		0BCE389F2902DECF00302C7D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,6 +62,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B552C8F290BD79500F4764C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0B552C90290BD7AA00F4764C /* CustomShape.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		0BCE38912902DECE00302C7D = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +91,7 @@
 			children = (
 				0BCE389D2902DECF00302C7D /* Something_spaceApp.swift */,
 				0BCE389F2902DECF00302C7D /* ContentView.swift */,
+				0B552C8F290BD79500F4764C /* Helpers */,
 				0BCE38AD2902E32E00302C7D /* View model */,
 				0BCE38AC2902E30F00302C7D /* View */,
 				0BCE38AB2902E30800302C7D /* Model */,
@@ -114,6 +127,7 @@
 				0B552C872909CD7E00F4764C /* Row.swift */,
 				0B552C89290A9F5800F4764C /* DetailView.swift */,
 				0B552C8B290AE32500F4764C /* StickyDetailView.swift */,
+				0B552C8D290BD72E00F4764C /* FloatingTabBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -202,6 +216,7 @@
 			files = (
 				0B552C842909B7BB00F4764C /* API.swift in Sources */,
 				0B552C7E29094BB000F4764C /* SelectDateView.swift in Sources */,
+				0B552C91290BD7AA00F4764C /* CustomShape.swift in Sources */,
 				0B552C8C290AE32500F4764C /* StickyDetailView.swift in Sources */,
 				0B552C8029095DF700F4764C /* Spinner.swift in Sources */,
 				0B552C8A290A9F5800F4764C /* DetailView.swift in Sources */,
@@ -215,6 +230,7 @@
 				0BCE389E2902DECF00302C7D /* Something_spaceApp.swift in Sources */,
 				0BCE38B529069D2F00302C7D /* PictureOfTodayView.swift in Sources */,
 				0BCE38B12906972A00302C7D /* Constants.swift in Sources */,
+				0B552C8E290BD72E00F4764C /* FloatingTabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
