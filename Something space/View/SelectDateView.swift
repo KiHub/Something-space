@@ -17,19 +17,21 @@ struct SelectDateView: View {
     
     var body: some View {
         VStack(spacing: 20) {
-        
+            Spacer()
             Text("Select a day 📆").font(.title)
             DatePicker("Select a day", selection: $date, in: ...Date(), displayedComponents: .date)
             Button {
                 self.manager.date = self.date
                 self.presentation.wrappedValue.dismiss()
             } label: {
-                Text("Done ✅").foregroundColor(.black)
+                Text("Done ✅").foregroundColor(Color("ColorDark"))
             }
+            Spacer()
+            Text("Illustration by AlexS from Ouch!")
         }.padding()
             .labelsHidden()
-       
-
+        
+        
     }
 }
 
