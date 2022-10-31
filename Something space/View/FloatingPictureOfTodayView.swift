@@ -21,17 +21,6 @@ struct FloatingPictureOfTodayView: View {
             ScrollView {
                 ZStack {
                     
-//                    VStack(spacing: 30) {
-//                        Spacer()
-//                        Text(manager.photo.date).font(.headline)
-//                        //   Spacer()
-//                        Text(manager.photo.title).font(.headline)
-//                        //   Spacer()
-//                        Text(manager.photo.description)
-//                    }
-//                    .padding(.horizontal, 20)
-//                    .padding(.top, 350)
-                    
                     GeometryReader { gr in
                         
                         VStack() {
@@ -73,10 +62,12 @@ struct FloatingPictureOfTodayView: View {
                         Text(manager.photo.title).font(.headline)
                         }
                         .padding()
+                        .foregroundColor(Color("ColorDark"))
                         .background(.ultraThinMaterial)
                         .cornerRadius(20)
                         //   Spacer()
                         Text(manager.photo.description)
+                            .shadow(color: .white, radius: 10)
                     }
                     .padding(.horizontal, 20)
                     .padding(.top, 350)

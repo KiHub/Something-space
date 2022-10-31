@@ -19,6 +19,10 @@
 		0B552C8E290BD72E00F4764C /* FloatingTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B552C8D290BD72E00F4764C /* FloatingTabBar.swift */; };
 		0B552C91290BD7AA00F4764C /* CustomShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B552C90290BD7AA00F4764C /* CustomShape.swift */; };
 		0B552C93290BFE0E00F4764C /* FloatingPictureOfTodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B552C92290BFE0E00F4764C /* FloatingPictureOfTodayView.swift */; };
+		0B552C9F29106A4600F4764C /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B552C9E29106A4600F4764C /* Global.swift */; };
+		0B552CA229106AB200F4764C /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B552CA129106AB200F4764C /* OnboardingView.swift */; };
+		0B552CA429106AF700F4764C /* OnboardingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B552CA329106AF700F4764C /* OnboardingData.swift */; };
+		0B552CA629106B1F00F4764C /* OnboardingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B552CA529106B1F00F4764C /* OnboardingManager.swift */; };
 		0BCE389E2902DECF00302C7D /* Something_spaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCE389D2902DECF00302C7D /* Something_spaceApp.swift */; };
 		0BCE38A02902DECF00302C7D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCE389F2902DECF00302C7D /* ContentView.swift */; };
 		0BCE38A22902DED300302C7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BCE38A12902DED300302C7D /* Assets.xcassets */; };
@@ -42,6 +46,10 @@
 		0B552C8D290BD72E00F4764C /* FloatingTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTabBar.swift; sourceTree = "<group>"; };
 		0B552C90290BD7AA00F4764C /* CustomShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomShape.swift; sourceTree = "<group>"; };
 		0B552C92290BFE0E00F4764C /* FloatingPictureOfTodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPictureOfTodayView.swift; sourceTree = "<group>"; };
+		0B552C9E29106A4600F4764C /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		0B552CA129106AB200F4764C /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		0B552CA329106AF700F4764C /* OnboardingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingData.swift; sourceTree = "<group>"; };
+		0B552CA529106B1F00F4764C /* OnboardingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingManager.swift; sourceTree = "<group>"; };
 		0BCE389A2902DECF00302C7D /* Something space.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Something space.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BCE389D2902DECF00302C7D /* Something_spaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Something_spaceApp.swift; sourceTree = "<group>"; };
 		0BCE389F2902DECF00302C7D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -67,9 +75,21 @@
 		0B552C8F290BD79500F4764C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				0B552CA029106A5800F4764C /* Onboarding */,
 				0B552C90290BD7AA00F4764C /* CustomShape.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		0B552CA029106A5800F4764C /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				0B552CA129106AB200F4764C /* OnboardingView.swift */,
+				0B552CA329106AF700F4764C /* OnboardingData.swift */,
+				0B552CA529106B1F00F4764C /* OnboardingManager.swift */,
+				0B552C9E29106A4600F4764C /* Global.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		0BCE38912902DECE00302C7D = {
@@ -221,7 +241,10 @@
 				0B552C7E29094BB000F4764C /* SelectDateView.swift in Sources */,
 				0B552C91290BD7AA00F4764C /* CustomShape.swift in Sources */,
 				0B552C8C290AE32500F4764C /* StickyDetailView.swift in Sources */,
+				0B552C9F29106A4600F4764C /* Global.swift in Sources */,
 				0B552C8029095DF700F4764C /* Spinner.swift in Sources */,
+				0B552CA629106B1F00F4764C /* OnboardingManager.swift in Sources */,
+				0B552CA429106AF700F4764C /* OnboardingData.swift in Sources */,
 				0B552C8A290A9F5800F4764C /* DetailView.swift in Sources */,
 				0B552C882909CD7E00F4764C /* Row.swift in Sources */,
 				0B552C822909B72000F4764C /* ListNetworkManager.swift in Sources */,
@@ -229,6 +252,7 @@
 				0BCE38AF2906960100302C7D /* NetworkManager.swift in Sources */,
 				0BCE38B3290698CB00302C7D /* UrlHelper.swift in Sources */,
 				0BCE38A02902DECF00302C7D /* ContentView.swift in Sources */,
+				0B552CA229106AB200F4764C /* OnboardingView.swift in Sources */,
 				0B552C862909CB8F00F4764C /* ListView.swift in Sources */,
 				0BCE389E2902DECF00302C7D /* Something_spaceApp.swift in Sources */,
 				0BCE38B529069D2F00302C7D /* PictureOfTodayView.swift in Sources */,

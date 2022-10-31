@@ -15,16 +15,6 @@ struct StickyDetailView: View {
         ZStack(alignment: .top) {
             ScrollView {
                 ZStack {
-//                    VStack(spacing: 30) {
-//                        Spacer()
-//                        Text(photo.date).font(.headline)
-//                        //   Spacer()
-//                        Text(photo.title).font(.headline)
-//                        //   Spacer()
-//                        Text(photo.description)
-//                    }
-//                    .padding(.horizontal, 20)
-//                    .padding(.top, 350)
                     
                     GeometryReader { gr in
                         
@@ -87,19 +77,13 @@ struct StickyDetailView: View {
                         Text(photo.title).font(.headline)
                         }
                         .padding()
+                        .foregroundColor(Color("ColorDark"))
                         .background(.ultraThinMaterial)
                         .cornerRadius(20)
                        
-                       // .foregroundColor(Color("ColorLightShadow")).opacity(20)
-                       
-//                        .overlay(RoundedRectangle(cornerRadius: 20)
-//                            .foregroundColor(Color("ColorLightShadow")))
-                       // .foregroundColor(.yellow)
-                        //   Spacer()
                         Text(photo.description)
+                            .shadow(color: .white, radius: 10)
                     }
-//                    .overlay(RoundedRectangle(cornerRadius: 20))
-//                    .foregroundColor(.yellow)
                     .padding(.horizontal, 20)
                     .padding(.top, 350)
                     
