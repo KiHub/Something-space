@@ -22,11 +22,12 @@ struct OnboardingView: View {
                 Image(data.objectImage)
                     .resizable()
                     .scaledToFit()
-                    .offset(x: 0, y: 150)
-                    .scaleEffect(isAnimating ? 1 : 0.9)
+                    .offset(x: 0, y: 180)
+                    .scaleEffect(isAnimating ? 0.7 : 0.2)
+                    
             }
 
-            Spacer()
+     //       Spacer()
             Spacer()
 
             Text(data.primaryText)
