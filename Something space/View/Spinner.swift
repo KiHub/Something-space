@@ -33,10 +33,10 @@ struct Spinner: View {
                 SpinnerCircle(start: spinnerStart, end: spinnerEndS2S3, rotation: rotationDegreeS3, color: Color("ColorLightShadow"))
 
                 // S2
-                SpinnerCircle(start: spinnerStart, end: spinnerEndS2S3, rotation: rotationDegreeS2, color: Color("ColorTab"))
+                SpinnerCircle(start: spinnerStart, end: spinnerEndS2S3, rotation: rotationDegreeS2, color: Color("ColorDark"))
 
                 // S1
-                SpinnerCircle(start: spinnerStart, end: spinnerEndS1, rotation: rotationDegreeS1, color: Color("ColorTabLight"))
+                SpinnerCircle(start: spinnerStart, end: spinnerEndS1, rotation: rotationDegreeS1, color: Color("ColorLight"))
 
             }.frame(width: 200, height: 200)
         }

@@ -50,9 +50,9 @@ struct FloatingTabBar: View {
                                 .renderingMode(.template)
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 22.0, height: 22.0)
-                                .foregroundColor(selectedTab == image ? .white : Color("ColorTabLight"))
+                                .foregroundColor(selectedTab == image ? .white : Color("ColorLight"))
                                 .padding(selectedTab == image ? 15 : 0)
-                                .background(Color("ColorTab").opacity(selectedTab == image ? 1 : 0).clipShape(Circle()))
+                                .background(Color("ColorDark").opacity(selectedTab == image ? 1 : 0).clipShape(Circle()))
                                 .matchedGeometryEffect(id: image, in: animation)
                                 .offset(x: selectedTab == image ? -10 : 0, y: selectedTab == image ? -50 : 0)
                         })
@@ -68,7 +68,7 @@ struct FloatingTabBar: View {
             }
             .padding(.horizontal, 60)
             .padding(.vertical)
-            .background(Color("ColorTab").clipShape(CustomShape(xAxis: xAxis)).cornerRadius(20.0))
+            .background(Color("ColorDark").clipShape(CustomShape(xAxis: xAxis)).cornerRadius(20.0))
             
             .padding(.horizontal)
             // Bottom edge....

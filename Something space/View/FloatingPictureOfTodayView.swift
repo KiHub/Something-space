@@ -21,16 +21,16 @@ struct FloatingPictureOfTodayView: View {
             ScrollView {
                 ZStack {
                     
-                    VStack(spacing: 30) {
-                        Spacer()
-                        Text(manager.photo.date).font(.headline)
-                        //   Spacer()
-                        Text(manager.photo.title).font(.headline)
-                        //   Spacer()
-                        Text(manager.photo.description)
-                    }
-                    .padding(.horizontal, 20)
-                    .padding(.top, 350)
+//                    VStack(spacing: 30) {
+//                        Spacer()
+//                        Text(manager.photo.date).font(.headline)
+//                        //   Spacer()
+//                        Text(manager.photo.title).font(.headline)
+//                        //   Spacer()
+//                        Text(manager.photo.description)
+//                    }
+//                    .padding(.horizontal, 20)
+//                    .padding(.top, 350)
                     
                     GeometryReader { gr in
                         
@@ -65,6 +65,21 @@ struct FloatingPictureOfTodayView: View {
                         }
                         .ignoresSafeArea(.container, edges: .top)
                     }
+                    VStack(spacing: 30) {
+                      //  Spacer()
+                        VStack {
+                        Text(manager.photo.date).font(.headline)
+                        //   Spacer()
+                        Text(manager.photo.title).font(.headline)
+                        }
+                        .padding()
+                        .background(.ultraThinMaterial)
+                        .cornerRadius(20)
+                        //   Spacer()
+                        Text(manager.photo.description)
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.top, 350)
                 }
                 //        }
             }.edgesIgnoringSafeArea(.vertical)
@@ -76,7 +91,7 @@ struct FloatingPictureOfTodayView: View {
                         
                         self.showDate.toggle()
                     } label: {
-                        Text("📆").foregroundColor(Color("ColorTabLight"))
+                        Text("📆").foregroundColor(Color("ColorLight"))
                             .padding()
                             .background(
                                 Circle()
@@ -87,7 +102,7 @@ struct FloatingPictureOfTodayView: View {
                         .popover(isPresented: $showDate) {
                             SelectDateView(manager: self.manager)
                         }
-                        .foregroundColor(Color("ColorTabLight"))
+                        .foregroundColor(Color("ColorLight"))
                     
                         .padding()
                     Spacer()

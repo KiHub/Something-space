@@ -15,16 +15,17 @@ struct StickyDetailView: View {
         ZStack(alignment: .top) {
             ScrollView {
                 ZStack {
-                    VStack(spacing: 30) {
-                        Spacer()
-                        Text(photo.date).font(.headline)
-                        //   Spacer()
-                        Text(photo.title).font(.headline)
-                        //   Spacer()
-                        Text(photo.description)
-                    }
-                    .padding(.horizontal, 20)
-                    .padding(.top, 350)
+//                    VStack(spacing: 30) {
+//                        Spacer()
+//                        Text(photo.date).font(.headline)
+//                        //   Spacer()
+//                        Text(photo.title).font(.headline)
+//                        //   Spacer()
+//                        Text(photo.description)
+//                    }
+//                    .padding(.horizontal, 20)
+//                    .padding(.top, 350)
+                    
                     GeometryReader { gr in
                         
                         VStack() {
@@ -75,6 +76,33 @@ struct StickyDetailView: View {
                             }
                         }
                     }
+                    
+                    VStack(spacing: 30) {
+                       // Spacer()
+                        
+                        
+                        VStack() {
+                        Text(photo.date).font(.headline)
+                        //   Spacer()
+                        Text(photo.title).font(.headline)
+                        }
+                        .padding()
+                        .background(.ultraThinMaterial)
+                        .cornerRadius(20)
+                       
+                       // .foregroundColor(Color("ColorLightShadow")).opacity(20)
+                       
+//                        .overlay(RoundedRectangle(cornerRadius: 20)
+//                            .foregroundColor(Color("ColorLightShadow")))
+                       // .foregroundColor(.yellow)
+                        //   Spacer()
+                        Text(photo.description)
+                    }
+//                    .overlay(RoundedRectangle(cornerRadius: 20))
+//                    .foregroundColor(.yellow)
+                    .padding(.horizontal, 20)
+                    .padding(.top, 350)
+                    
                 }.edgesIgnoringSafeArea(.vertical)
             }.navigationBarHidden(true)
             HStack(spacing: 30) {
@@ -82,7 +110,7 @@ struct StickyDetailView: View {
                     
                     self.presentation.wrappedValue.dismiss()
                 } label: {
-                    Text("⬅️").foregroundColor(Color("ColorTabLight"))
+                    Text("⬅️").foregroundColor(Color("ColorLight"))
                         .padding()
                         .background(
                             Circle()
@@ -90,7 +118,7 @@ struct StickyDetailView: View {
                         )
                 }.controlSize(.small)
                 
-                    .foregroundColor(Color("ColorTabLight"))
+                    .foregroundColor(Color("ColorLight"))
                 
                     .padding()
                 Spacer()
