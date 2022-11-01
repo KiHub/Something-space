@@ -25,18 +25,16 @@ struct StickyDetailView: View {
                                         image
                                             .resizable()
                                             .aspectRatio(contentMode: .fill)
-                                        //.frame(height: 300)
                                             .frame(height:
                                                     self.calculateHeight(minHeight: 120,
                                                                          maxHeight: 300,
                                                                          yOffset: gr.frame(in: .global).origin.y))
                                             .offset(y: gr.frame(in: .global).origin.y < 0 // Is it going up?
-                                                    ? abs(gr.frame(in: .global).origin.y) // Push it down!
-                                                    : -gr.frame(in: .global).origin.y) // Push it up!
+                                                    ? abs(gr.frame(in: .global).origin.y) // down!
+                                                    : -gr.frame(in: .global).origin.y) //  up!
                                         Spacer()
                                     } else if phase.error != nil {
-                                        HStack {
-                                            Spacer()
+                                        VStack {
                                             ZStack {
                                                 Circle()
                                                     .foregroundColor(Color("ColorLightShadow"))
@@ -45,12 +43,12 @@ struct StickyDetailView: View {
                                                                                  maxHeight: 200,
                                                                                  yOffset: gr.frame(in: .global).origin.y))
                                                 Text("❌")
+                                                    .font(.title)
                                             }
-                                            Spacer()
                                         }
+                                        .padding()
                                         
                                     } else {
-                                        // ProgressView()
                                         HStack {
                                             Spacer()
                                             Spinner()
@@ -68,19 +66,15 @@ struct StickyDetailView: View {
                     }
                     
                     VStack(spacing: 30) {
-                       // Spacer()
-                        
-                        
                         VStack() {
-                        Text(photo.date).font(.headline)
-                        //   Spacer()
-                        Text(photo.title).font(.headline)
+                            Text(photo.date).font(.headline)
+                            Text(photo.title).font(.headline)
                         }
                         .padding()
                         .foregroundColor(Color("ColorDark"))
                         .background(.ultraThinMaterial)
                         .cornerRadius(20)
-                       
+                        
                         Text(photo.description)
                             .shadow(color: .white, radius: 10)
                     }
@@ -94,7 +88,9 @@ struct StickyDetailView: View {
                     
                     self.presentation.wrappedValue.dismiss()
                 } label: {
-                    Text("⬅️").foregroundColor(Color("ColorLight"))
+                    Text("\(Image(systemName: "arrow.backward"))")
+                        .font(.headline)
+                        .foregroundColor(Color("ColorLight"))
                         .padding()
                         .background(
                             Circle()
@@ -126,7 +122,7 @@ struct StickyDetailView: View {
 
 struct StickyDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(photo: Photo.createDefault())
+        StickyDetailView(photo: Photo.createDefault())
     }
 }
 

@@ -19,16 +19,14 @@ struct Row: View {
                         image
                             .resizable()
                             .scaledToFill()
-                          //  .aspectRatio(contentMode: .fit)
                             .clipShape(Circle())
                     } else if phase.error != nil {
                         ZStack {
-                           
+                            
                             Circle()
                                 .foregroundColor(Color("ColorLightShadow"))
                             Text("❌")
-                        }
-                        
+                        } 
                     } else {
                         ProgressView()
                     }
@@ -39,17 +37,15 @@ struct Row: View {
                 Text(photo.date)
                 Text(photo.title).font(.headline)
             }
-        
+            
             Spacer()
         }
-        
     }
 }
 
 struct Row_Previews: PreviewProvider {
     static var previews: some View {
         Row(photo: Photo.createDefault())
-      //  Row(photo: Photo.createDefault(), image: UIImage(named: "preview")!)
             .previewLayout(.fixed(width: 400, height: 100))
     }
 }

@@ -18,16 +18,13 @@ struct ListView: View {
                     NavigationLink(destination: StickyDetailView(photo: info)) {
                         Row(photo: info)
                     }
-        
                 }
-                
             }
             .navigationTitle("Something space")
             .refreshable {
                 manager.getMore(times: 5)
+            }
         }
-        }
-        
     }
 }
 

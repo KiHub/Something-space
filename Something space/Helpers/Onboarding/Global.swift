@@ -8,6 +8,5 @@
 import SwiftUI
 
 class Global: ObservableObject {
-
     @AppStorage("showOnboarding") var onboardingOn: Bool = true
 }

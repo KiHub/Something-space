@@ -13,10 +13,11 @@ struct OnboardingData: Hashable, Identifiable {
     let objectImage: String
     let primaryText: String
     let secondaryText: String
+    let on: Bool
     
     static let list: [OnboardingData] = [
-        OnboardingData(id: 0, backgroundImage: "path", objectImage: "rocket", primaryText: "Are you looking for something space?", secondaryText: "If you are curious about space, it's definitely for you"),
-        OnboardingData(id: 1, backgroundImage: "path", objectImage: "rocket", primaryText: "Get a new picture every day", secondaryText: "And a small portion of interesting facts"),
-        OnboardingData(id: 2, backgroundImage: "path", objectImage: "rocket", primaryText: "Ready for space adventure?", secondaryText: "")
+        OnboardingData(id: 0, backgroundImage: "path", objectImage: "rocket", primaryText: "Are you looking for something space?", secondaryText: "If you are curious about space, it's definitely for you", on: false),
+        OnboardingData(id: 1, backgroundImage: "path", objectImage: "rocket", primaryText: "Get a new picture every day", secondaryText: "And a small portion of interesting facts", on: false),
+        OnboardingData(id: 2, backgroundImage: "path", objectImage: "rocket", primaryText: "Let's look at something space 🚀", secondaryText: "", on: true)
     ]
 }

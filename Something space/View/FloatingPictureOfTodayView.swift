@@ -15,14 +15,11 @@ struct FloatingPictureOfTodayView: View {
     
     var body: some View {
         
-        
         ZStack(alignment: .top) {
             
             ScrollView {
                 ZStack {
-                    
                     GeometryReader { gr in
-                        
                         VStack() {
                             if manager.image != nil {
                                 Image(uiImage: self.manager.image!)
@@ -32,13 +29,12 @@ struct FloatingPictureOfTodayView: View {
                                             self.calculateHeight(minHeight: 120,
                                                                  maxHeight: 300,
                                                                  yOffset: gr.frame(in: .global).origin.y))
-                                    .offset(y: gr.frame(in: .global).origin.y < 0 // Is it going up?
-                                            ? abs(gr.frame(in: .global).origin.y) // Push it down!
-                                            : -gr.frame(in: .global).origin.y) // Push it up!
+                                    .offset(y: gr.frame(in: .global).origin.y < 0 // going up?
+                                            ? abs(gr.frame(in: .global).origin.y) // down!
+                                            : -gr.frame(in: .global).origin.y) // up!
                                 Spacer()
                             } else {
                                 // ProgressView()
-                                
                                 VStack {
                                     HStack {
                                         Spacer()
@@ -55,17 +51,14 @@ struct FloatingPictureOfTodayView: View {
                         .ignoresSafeArea(.container, edges: .top)
                     }
                     VStack(spacing: 30) {
-                      //  Spacer()
                         VStack {
-                        Text(manager.photo.date).font(.headline)
-                        //   Spacer()
-                        Text(manager.photo.title).font(.headline)
+                            Text(manager.photo.date).font(.headline)
+                            Text(manager.photo.title).font(.headline)
                         }
                         .padding()
                         .foregroundColor(Color("ColorDark"))
                         .background(.ultraThinMaterial)
                         .cornerRadius(20)
-                        //   Spacer()
                         Text(manager.photo.description)
                             .shadow(color: .white, radius: 10)
                     }
@@ -74,28 +67,27 @@ struct FloatingPictureOfTodayView: View {
                 }
                 //        }
             }.edgesIgnoringSafeArea(.vertical)
-            //  }.navigationBarHidden(true)
             VStack() {
-                
                 HStack() {
                     Button {
-                        
                         self.showDate.toggle()
                     } label: {
-                        Text("📆").foregroundColor(Color("ColorLight"))
+                        Text("\(Image(systemName: "doc.text.magnifyingglass"))")
+                            .font(.headline)
+                            .foregroundColor(Color("ColorLight"))
                             .padding()
                             .background(
                                 Circle()
                                     .stroke(lineWidth: 2)
-                                //  .shadow(color: Color("ColorLightShadow"), radius: 10, x: 5, y: 5)
                             )
-                    }.controlSize(.small)
-                        .popover(isPresented: $showDate) {
-                            SelectDateView(manager: self.manager)
-                        }
-                        .foregroundColor(Color("ColorLight"))
+                    }
+                    .imageScale(.large)
+                    .popover(isPresented: $showDate) {
+                        SelectDateView(manager: self.manager)
+                    }
+                    .foregroundColor(Color("ColorLight"))
                     
-                        .padding()
+                    .padding()
                     Spacer()
                 }
             }.padding(.vertical, 50)
@@ -112,7 +104,6 @@ struct FloatingPictureOfTodayView: View {
             return minHeight
         }
         print("down")
-        
         //    DOWN
         return maxHeight + yOffset
     }
@@ -120,7 +111,7 @@ struct FloatingPictureOfTodayView: View {
 }
 struct FloatingPictureOfTodayView_Previews: PreviewProvider {
     static var previews: some View {
-        let view = PictureOfTodayView()
+        let view = FloatingPictureOfTodayView()
         view.manager.photo = Photo.createDefault()
         view.manager.image = UIImage(named: "preview")
         return view

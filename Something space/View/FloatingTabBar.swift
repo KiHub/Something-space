@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FloatingTabBar: View {
-    
+    @Environment(\.colorScheme) var colorScheme
     var colums = [GridItem(.adaptive(minimum: 160), spacing: 20)]
     var tabs = ["home", "star"]
     @State var selectedTab = "home"
@@ -26,15 +26,14 @@ struct FloatingTabBar: View {
             TabView(selection: $selectedTab) {
                 
                 FloatingPictureOfTodayView()
-              //  PictureOfTodayView()
                     .ignoresSafeArea(.all, edges: .all)
                     .tag("home")
-                    
-               ListView()
+                
+                ListView()
                     .ignoresSafeArea(.all, edges: .all)
                     .tag("star")
             }
-
+            
             // custom tab bar
             HStack(spacing: 0) {
                 ForEach(tabs, id: \.self) { image in
@@ -52,7 +51,7 @@ struct FloatingTabBar: View {
                                 .frame(width: 22.0, height: 22.0)
                                 .foregroundColor(selectedTab == image ? .white : Color("ColorLight"))
                                 .padding(selectedTab == image ? 15 : 0)
-                                .background(Color("ColorDark").opacity(selectedTab == image ? 1 : 0).clipShape(Circle()))
+                                .background(colorScheme == .dark ? Color("ColorLoght").opacity(selectedTab == image ? 1 : 0).clipShape(Circle()) : Color("ColorDark").opacity(selectedTab == image ? 1 : 0).clipShape(Circle()))
                                 .matchedGeometryEffect(id: image, in: animation)
                                 .offset(x: selectedTab == image ? -10 : 0, y: selectedTab == image ? -50 : 0)
                         })
@@ -69,11 +68,8 @@ struct FloatingTabBar: View {
             .padding(.horizontal, 60)
             .padding(.vertical)
             .background(Color("ColorDark").clipShape(CustomShape(xAxis: xAxis)).cornerRadius(20.0))
-            
             .padding(.horizontal)
-            // Bottom edge....
             .padding(.bottom, 35)
-          //  .padding(.bottom , UIApplication.shared.windows.first?.safeAreaInsets.bottom)
         }
         .ignoresSafeArea(.all, edges: .all)
     }

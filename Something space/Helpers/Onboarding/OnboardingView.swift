@@ -23,11 +23,9 @@ struct OnboardingView: View {
                     .resizable()
                     .scaledToFit()
                     .offset(x: 0, y: 180)
-                    .scaleEffect(isAnimating ? 0.7 : 0.2)
-                    
+                    .scaleEffect(isAnimating ? 0.6 : 0.1)
             }
 
-     //       Spacer()
             Spacer()
 
             Text(data.primaryText)
@@ -40,10 +38,8 @@ struct OnboardingView: View {
                 .multilineTextAlignment(.center)
                 .frame(maxWidth: 250)
                 .foregroundColor(Color("ColorLightShadow"))
-               // .shadow(color: Color.black.opacity(0.1), radius: 1, x: 2, y: 2)
 
             Spacer()
-
             Button(action: {
  
                 global.onboardingOn = false
@@ -60,9 +56,7 @@ struct OnboardingView: View {
                             )
                     )
             })
-//            .fullScreenCover(isPresented: $showMain, content: {
-//                MainView()
-//            })
+            .opacity(data.on ? 1.0 : 0.0)
             .shadow(radius: 10)
 
             Spacer()

@@ -8,20 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     @ObservedObject var global = Global()
+    
     var body: some View {
-       //  PictureOfTodayView()
-     //   ListView()
-     //   FloatingTabBar()
         
         if global.onboardingOn {
             OnboardingManager()
         } else {
             FloatingTabBar()
         }
-        
-      //  ListView()
-      //  FloatingPictureOfTodayView()
     }
 }
 
