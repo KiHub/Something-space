@@ -20,7 +20,7 @@ struct ListView: View {
                     }
                 }
             }
-            .navigationTitle("Something space")
+           // .navigationTitle("Something space")
             .refreshable {
                 manager.getMore(times: 5)
             }

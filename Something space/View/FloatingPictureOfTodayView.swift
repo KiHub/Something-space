@@ -67,7 +67,7 @@ struct FloatingPictureOfTodayView: View {
                 }
                 //        }
             }.edgesIgnoringSafeArea(.vertical)
-            VStack() {
+            VStack {
                 HStack() {
                     Button {
                         self.showDate.toggle()
@@ -90,7 +90,7 @@ struct FloatingPictureOfTodayView: View {
                     .padding()
                     Spacer()
                 }
-            }.padding(.vertical, 50)
+            }.padding(.vertical, 30)
         }
     }
     
