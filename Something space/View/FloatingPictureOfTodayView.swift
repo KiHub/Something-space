@@ -32,6 +32,7 @@ struct FloatingPictureOfTodayView: View {
                                     .offset(y: gr.frame(in: .global).origin.y < 0 // going up?
                                             ? abs(gr.frame(in: .global).origin.y) // down!
                                             : -gr.frame(in: .global).origin.y) // up!
+                                       .frame(width: UIScreen.main.bounds.width)
                                 Spacer()
                             } else {
                                 // ProgressView()

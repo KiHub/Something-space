@@ -32,6 +32,7 @@ struct StickyDetailView: View {
                                             .offset(y: gr.frame(in: .global).origin.y < 0 // Is it going up?
                                                     ? abs(gr.frame(in: .global).origin.y) // down!
                                                     : -gr.frame(in: .global).origin.y) //  up!
+                                            .frame(width: UIScreen.main.bounds.width)
                                         Spacer()
                                     } else if phase.error != nil {
                                         VStack {
@@ -56,6 +57,7 @@ struct StickyDetailView: View {
                                                         self.calculateHeight(minHeight: 120,
                                                                              maxHeight: 300,
                                                                              yOffset: gr.frame(in: .global).origin.y))
+                                               
                                             Spacer()
                                         }
                                     }
